@@ -1,0 +1,116 @@
+.progress {
+    --accent: var(--primary-accent, red);
+    --background: var(--primary-background, #fff);
+    --foreground: var(--primary-foreground, #000);
+
+    align-items: center;
+    background: var(--background);
+    display: flex;
+    justify-content: center;
+    padding: 0.5em;
+}
+
+.button {
+    appearance: none;
+    background: transparent;
+    border: 3px solid var(--foreground);
+    border-radius: 100%;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    height: 2em;
+    margin: 0 0.5em;
+    width: 2em;
+}
+
+.pager {
+    border: 0;
+    color: var(--foreground);
+    padding: 0;
+    position: relative;
+    width: 5em;
+}
+
+.pager::after,
+.pager::before {
+    border: 1em solid transparent;
+    border-radius: 0;
+    content: '';
+    height: 0;
+    position: absolute;
+    top: 0;
+    width: 0;
+}
+
+.pagerBack {
+    composes: pager button;
+
+    text-align: right;
+}
+
+.pagerBack::after,
+.pagerBack::before {
+    left: 0;
+}
+
+.pagerBack::before {
+    border-right-color: var(--foreground);
+}
+
+.pagerBack::after {
+    border-right-color: var(--accent);
+    left: 4px;
+    transform: scale(0.6);
+}
+
+.pageNext {
+    composes: pager button;
+
+    text-align: left;
+}
+
+.pageNext::after,
+.pageNext::before {
+    right: 0;
+}
+
+.pageNext::before {
+    border-left-color: var(--foreground);
+}
+
+.pageNext::after {
+    border-left-color: var(--accent);
+    left: auto;
+    right: 4px;
+    transform: scale(0.6);
+}
+
+/* Maybe don't need to hide steps on mobile */
+.step {
+    composes: button;
+
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .pager {
+        width: 2em;
+    }
+
+    .pagerLabel {
+        display: none;
+    }
+
+    .step {
+        display: block;
+    }
+
+    .stepActive {
+        composes: button;
+
+        background-color: var(--accent);
+        background-image: url('../images/peppermint.svg');
+        background-position: center center;
+        border: none;
+    }
+}
