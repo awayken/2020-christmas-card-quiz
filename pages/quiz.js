@@ -4,7 +4,7 @@ import styles from '../styles/Quiz.module.css';
 
 export default function Quiz() {
     return (
-        <Layout>
+        <Layout title="Quiz Time">
             <p>Quiz Page.</p>
         </Layout>
     );

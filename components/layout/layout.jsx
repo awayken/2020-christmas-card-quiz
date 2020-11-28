@@ -8,7 +8,7 @@ export default function Layout({ children, title }) {
             <Head>
                 <title>{`${
                     title ? `${title} - ` : ''
-                }Rausch Family: 2020 Christmas Quiz`}</title>
+                }2020 Rausch Quiz`}</title>
 
                 <meta
                     name="viewport"

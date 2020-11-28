@@ -6,7 +6,7 @@ import styles from '../styles/Home.module.css';
 
 export default function Home() {
     return (
-        <Layout title="Home">
+        <Layout>
             <section className={styles.container}>
                 <h1 className="introduction__heading">
                     <span className="visuallyhidden">
